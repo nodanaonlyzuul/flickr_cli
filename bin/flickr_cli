@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'flickr_cli'
+require 'image_cutter'
+FlickrCli.start_program

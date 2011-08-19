@@ -1,0 +1,11 @@
+h1. flickr_cli
+
+A command line interface to a photo sharing website is surely an abomination in the eyes of God.
+
+h3. Install
+
+gem install flickr_cli
+
+h3. Requirements
+
+# A good internet connection and patience

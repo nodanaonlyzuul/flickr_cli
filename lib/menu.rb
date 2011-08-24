@@ -28,7 +28,16 @@ module FlickrCli
     end
 
     def self.download_and_print(picked_photo)
-      download_url = flickr.photos.getSizes(:photo_id => picked_photo.id).find{|size| size.label == "Large" || size.label == "Medium" || size.label == "Small"}.source
+
+      photos       = flickr.photos.getSizes(:photo_id => picked_photo.id)
+      download_url = nil
+
+      ["Large", "Medium", "Medium 640", "Small"].each do |style|
+        if picture = photos.find{ |photo| photo.label == style }
+          download_url  = picture.source
+        end
+        break if download_url
+      end
 
       my_file = Tempfile.new('tempimage.jpg')
       my_file << Net::HTTP.get_response(URI.parse(download_url)).body

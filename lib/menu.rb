@@ -5,7 +5,7 @@ module FlickrCli
       choose do |menu|
         menu.prompt = "What's up?"
         menu.choice(:Contacts)         { contacts }
-        menu.choice(:"Your Sets")      { sets     }
+        # menu.choice(:"Your Sets")      { sets     }
       end
     end
 
@@ -21,6 +21,8 @@ module FlickrCli
           menu.choice(photo) do
             # When you choose a photo...
             FlickrCli::Menu.download_and_print(photos.detect{|x| x.title == photo})
+            puts "Press any ENTER to continue"
+            do_nothing = STDIN.gets
             self.menu_for(FlickrCli::Menu.menu_for(contact))
           end
         end
@@ -58,8 +60,9 @@ module FlickrCli
     end
   end
 
-  def self.sets
-
-  end
+  # TODO: implement sets
+  # def self.sets
+  #
+  # end
 
 end

@@ -2,8 +2,8 @@ module FlickrCli
   module Authentication
     def self.establish_session
       auth_file               = File.expand_path("~/.flick_airliftrc")
-      FlickRaw.api_key        = "d4d152785af1b0ea68a5a2d173c75707"
-      FlickRaw.shared_secret  = "b9da0b4f99507dd0"
+      FlickRaw.api_key        = "e8505c88feb2c0cc9d2da6bcbe18767c"
+      FlickRaw.shared_secret  = "d344de362ea86f0e"
 
       if File.exists?(auth_file)
         puts "authenticating thought #{auth_file}"

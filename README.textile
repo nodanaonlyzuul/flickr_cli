@@ -9,3 +9,5 @@ gem install flickr_cli
 h3. Requirements
 
 # A good internet connection and patience
+
+That's it duder - use the flickr_cli command and get moving

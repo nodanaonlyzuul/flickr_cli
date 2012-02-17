@@ -26,6 +26,8 @@ module FlickrCli
             self.menu_for(FlickrCli::Menu.menu_for(contact))
           end
         end
+        menu.choice("Back") { self.main_menu }
+        menu.choice("Quit") { say "Be that way"; exit; }
       end
     end
 

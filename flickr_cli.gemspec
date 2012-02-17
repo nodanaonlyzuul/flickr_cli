@@ -11,7 +11,7 @@ $spec = Gem::Specification.new do |s|
   s.executables   =  ['flickr_cli']
   s.files         = Dir['bin/*','lib/**/*']
 
-  # TODO: Add all the dependencies
+  s.add_dependency('highline', '0.6.1')
   s.add_dependency('launchy',  '0.4.0')
   s.add_dependency('flickraw', '0.8.4')
   s.add_dependency('rmagick')

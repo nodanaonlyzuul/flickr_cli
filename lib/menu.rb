@@ -9,13 +9,14 @@ module FlickrCli
       end
     end
 
-    def self.menu_for(contact)
+    def self.menu_for(contact, page = 1)
 
-      user_id       = flickr.people.findByUsername(:username => contact).id
-      photos        = flickr.photos.search(:user_id => user_id)
+      the_page  = page
+      user_id   = flickr.people.findByUsername(:username => contact).id
+      photos    = flickr.photos.search(:user_id => user_id, :page => the_page)
 
       choose do |menu|
-        menu.prompt = "Pick a file"
+        menu.prompt = "Pick a File (page #{the_page})"
 
         photos.map(&:title).each do |photo|
           menu.choice(photo) do
@@ -26,7 +27,9 @@ module FlickrCli
             self.menu_for(FlickrCli::Menu.menu_for(contact))
           end
         end
-        menu.choice("Back") { self.main_menu }
+        menu.choice("Back <<") { self.menu_for(contact, (the_page+1) )} if the_page > 1
+        menu.choice("More >>") { self.menu_for(contact, (the_page+1) )}
+        menu.choice("::Main::") { self.main_menu }
         menu.choice("Quit") { say "Be that way"; exit; }
       end
     end

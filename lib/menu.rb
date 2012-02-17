@@ -27,10 +27,10 @@ module FlickrCli
             self.menu_for(FlickrCli::Menu.menu_for(contact))
           end
         end
-        menu.choice("Back <<") { self.menu_for(contact, (the_page+1) )} if the_page > 1
-        menu.choice("More >>") { self.menu_for(contact, (the_page+1) )}
-        menu.choice("::Main::") { self.main_menu }
-        menu.choice("Quit") { say "Be that way"; exit; }
+        menu.choice("Back <<")          { self.menu_for(contact, (the_page-1) )} if the_page > 1
+        menu.choice("More >>")          { self.menu_for(contact, (the_page+1) )}
+        menu.choice("~(==::Main::==)~") { self.main_menu }
+        menu.choice("Quit")             { say self.good_by_message; exit; }
       end
     end
 
@@ -53,6 +53,13 @@ module FlickrCli
       my_file.delete
     end
 
+    def self.good_by_message
+      ["Be that way",
+        "Goodbye - I'll never love again",
+        "See you later, bye!",
+        "Goodbye - Flickr? I hardly know her"].shuffle[0]
+    end
+
     def self.contacts
       contacts ||= flickr.contacts.getList.map(&:username).sort
 
@@ -64,6 +71,7 @@ module FlickrCli
       end
     end
   end
+
 
   # TODO: implement sets
   # def self.sets

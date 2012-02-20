@@ -27,8 +27,8 @@ module FlickrCli
             self.menu_for(FlickrCli::Menu.menu_for(contact))
           end
         end
-        menu.choice("Back <<")          { self.menu_for(contact, (the_page-1) )} if the_page > 1
         menu.choice("More >>")          { self.menu_for(contact, (the_page+1) )}
+        menu.choice("Back <<")          { self.menu_for(contact, (the_page-1) )} if the_page > 1
         menu.choice("~(==::Main::==)~") { self.main_menu }
         menu.choice("Quit")             { say self.good_by_message; exit; }
       end

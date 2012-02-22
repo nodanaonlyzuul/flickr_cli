@@ -4,8 +4,9 @@ module FlickrCli
     def self.main_menu
       choose do |menu|
         menu.prompt = "What's up?"
-        menu.choice(:Contacts)         { contacts }
-        # menu.choice(:"Your Sets")      { sets     }
+        menu.choice("Your Photostream")       { menu_for(flickr.test.login.username) }
+        menu.choice("Contacts' Photostream")  { contacts }
+        menu.choice("Quit")                   { end_program }
       end
     end
 
@@ -24,14 +25,19 @@ module FlickrCli
             FlickrCli::Menu.download_and_print(photos.detect{|x| x.title == photo})
             puts "Press any ENTER to continue"
             do_nothing = STDIN.gets
-            self.menu_for(FlickrCli::Menu.menu_for(contact))
+            self.menu_for(FlickrCli::Menu.menu_for(contact, the_page))
           end
         end
         menu.choice("More >>")          { self.menu_for(contact, (the_page+1) )}
         menu.choice("Back <<")          { self.menu_for(contact, (the_page-1) )} if the_page > 1
         menu.choice("~(==::Main::==)~") { self.main_menu }
-        menu.choice("Quit")             { say self.good_by_message; exit; }
+        menu.choice("Quit")             { self.end_program }
       end
+    end
+
+    def self.end_program
+      say self.good_by_message
+      exit
     end
 
     def self.download_and_print(picked_photo)
@@ -71,11 +77,5 @@ module FlickrCli
       end
     end
   end
-
-
-  # TODO: implement sets
-  # def self.sets
-  #
-  # end
 
 end

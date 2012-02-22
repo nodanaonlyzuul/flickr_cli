@@ -1,7 +1,7 @@
 $spec = Gem::Specification.new do |s|
   s.name        = "flickr_cli"
   s.description = "A Command-Line tool for exploring your flickr account"
-  s.version     = '0.1.3'
+  s.version     = '0.1.4'
   s.summary     = "A Command-Line tool for exploring your flickr account"
 
   s.authors   = ['Stephen Schor']

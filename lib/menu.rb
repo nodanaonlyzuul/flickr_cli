@@ -45,7 +45,7 @@ module FlickrCli
       photos       = flickr.photos.getSizes(:photo_id => picked_photo.id)
       download_url = nil
 
-      ["Original", "Large", "Medium"].each do |style|
+      ["Large", "Medium"].each do |style|
         if picture = photos.find{ |photo| photo.label == style }
           download_url  = picture.source
         end

@@ -51,10 +51,7 @@ module FlickrCli
         end
         break if download_url
       end
-      
-      require 'pry'
-      binding.pry
-      
+            
       my_file = Tempfile.new("tempimage#{File.basename(download_url)}")
       my_file << Net::HTTP.get_response(URI.parse(download_url)).body
       my_file.close

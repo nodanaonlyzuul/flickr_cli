@@ -6,7 +6,7 @@ module FlickrCli
       FlickRaw.shared_secret  = "d344de362ea86f0e"
 
       if File.exists?(auth_file)
-        puts "authenticating thought #{auth_file}"
+        puts "authenticating with #{auth_file}"
         data = YAML.load_file(auth_file)
         auth = flickr.auth.checkToken :auth_token => data["api_token"]
       else

@@ -8,19 +8,7 @@ module FlickrCli
     def self.convert_to_ascii(file)
 
       img = Magick::Image.read(file).first
-
-      # Resize too-large images. The resulting image is going to be
-      # about twice the size of the input, so if the original image is too
-      # large we need to make it smaller so the ASCII version won't be too
-      # big. The `change_geometry' method computes new dimensions for an
-      # image based on the geometry argument. The '320x320>' argument says
-      # "If the image is too big to fit in a 320x320 square, compute the
-      # dimensions of an image that will fit, but retain the original aspect
-      # ratio. If the image is already smaller than 320x320, keep the same
-      # dimensions."
-      img.change_geometry('728x728>') do |cols, rows|
-        img.resize!(cols, rows) if cols != img.columns || rows != img.rows
-      end
+      img.resize_to_fit!('728')
 
       # Compute the image size in ASCII "pixels" and resize the image to have
       # those dimensions. The resulting image does not have the same aspect

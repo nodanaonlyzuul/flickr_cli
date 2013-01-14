@@ -8,6 +8,12 @@ gem install flickr_cli
 
 h3. Requirements
 
+# Imagemagick
 # A good internet connection and patience
 
 That's it duder - use the flickr_cli command and get moving
+
+h3. For Best Viewing
+
+* Make your terminal window opaque
+* Reduce terminal's font size for best results

@@ -3,7 +3,7 @@ module FlickrCli
 
     def self.main_menu
       choose do |menu|
-        menu.prompt = "What's up?"
+        menu.prompt = "What do you want to explore?"
         menu.choice("Your Photostream")       { menu_for(flickr.test.login.username) }
         menu.choice("Contacts' Photostream")  { contacts }
         menu.choice("Quit")                   { end_program }

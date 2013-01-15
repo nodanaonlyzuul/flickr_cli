@@ -23,7 +23,7 @@ module FlickrCli
           menu.choice(photo) do
             # When you choose a photo...
             FlickrCli::Menu.download_and_print(photos.detect{|x| x.title == photo})
-            puts "Press any ENTER to continue"
+            puts "Press ENTER to continue"
             do_nothing = STDIN.gets
             self.menu_for(FlickrCli::Menu.menu_for(contact, the_page))
           end

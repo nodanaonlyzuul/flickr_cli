@@ -16,5 +16,7 @@ $spec = Gem::Specification.new do |s|
   s.add_dependency('flickraw', '0.8.4')
   s.add_dependency('rmagick')
 
+  s.add_development_dependency('pry')
+
   s.rubyforge_project = 'nowarning'
 end

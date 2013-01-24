@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    flickr_cli (0.1.5)
+    flickr_cli (0.2.0)
       flickraw (= 0.8.4)
       highline (= 1.6.11)
       launchy (= 0.4.0)

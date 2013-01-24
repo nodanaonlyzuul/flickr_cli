@@ -51,12 +51,8 @@ module FlickrCli
         end
         break if download_url
       end
-            
-      my_file = Tempfile.new("tempimage#{File.basename(download_url)}")
-      my_file << Net::HTTP.get_response(URI.parse(download_url)).body
-      my_file.close
-      puts FlickrCli::ImageCutter.convert_to_ascii(my_file.path)
-      my_file.delete
+      
+      puts AsciiArt.new(download_url).to_ascii_art      
     end
 
     def self.good_by_message

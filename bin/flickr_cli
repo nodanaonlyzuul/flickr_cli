@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
 require 'yaml'
 require 'flickr_cli'
-require 'image_cutter'
 FlickrCli.start_program

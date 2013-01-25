@@ -51,8 +51,8 @@ module FlickrCli
         end
         break if download_url
       end
-      
-      puts AsciiArt.new(download_url).to_ascii_art      
+
+      puts AsciiArt.new(download_url).to_ascii_art
     end
 
     def self.good_by_message

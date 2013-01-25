@@ -1,8 +1,6 @@
 # Extental Dependencies
 require 'rubygems'
 require 'flickraw'
-require 'net/http'
-require 'cgi'
 require 'launchy'
 require 'highline/import'
 require 'asciiart'

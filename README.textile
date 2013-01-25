@@ -11,7 +11,7 @@ h3. Requirements
 # Imagemagick
 # A good internet connection and patience
 
-That's it duder - use the flickr_cli command and get moving
+That's it duder - use the flickr_cli command and get moving.
 
 h3. For Best Viewing
 

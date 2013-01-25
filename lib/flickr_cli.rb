@@ -4,6 +4,7 @@ require 'flickraw'
 require 'launchy'
 require 'highline/import'
 require 'asciiart'
+
 # Internal Libraries
 require 'authentication'
 require 'menu'

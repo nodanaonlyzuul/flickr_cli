@@ -58,7 +58,7 @@ module FlickrCli
     def self.good_by_message
       ["Be that way",
         "Goodbye - I'll never love again",
-        "See you later, bye!",
+        "I love my wife, is that a crime?",
         "Goodbye - Flickr? I hardly know her"].shuffle[0]
     end
 

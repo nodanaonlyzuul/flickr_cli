@@ -1,5 +1,6 @@
 module FlickrCli
   module Menu
+    @cached_art  = {}
 
     def self.main_menu
       choose do |menu|
@@ -41,18 +42,22 @@ module FlickrCli
     end
 
     def self.download_and_print(picked_photo)
+      if @cached_art["photo_#{picked_photo.id}"]
+        puts @cached_art["photo_#{picked_photo.id}"]
+      else
+        photos       = flickr.photos.getSizes(:photo_id => picked_photo.id)
+        download_url = nil
 
-      photos       = flickr.photos.getSizes(:photo_id => picked_photo.id)
-      download_url = nil
-
-      ["Large", "Medium"].each do |style|
-        if picture = photos.find{ |photo| photo.label == style }
-          download_url  = picture.source
+        ["Large", "Medium"].each do |style|
+          if picture = photos.find{ |photo| photo.label == style }
+            download_url  = picture.source
+          end
+          break if download_url
         end
-        break if download_url
-      end
+        @cached_art["photo_#{picked_photo.id}"] = AsciiArt.new(download_url).to_ascii_art(width: 175)
 
-      puts AsciiArt.new(download_url).to_ascii_art(width: 175)
+        puts @cached_art["photo_#{picked_photo.id}"]
+      end
     end
 
     def self.good_by_message

@@ -8,7 +8,7 @@ gem install flickr_cli
 
 h3. Requirements
 
-# Imagemagick
+# Imagemagick (Needed for the "asciiart gem":https://github.com/eastmedia/asciiart)
 # A good internet connection and patience
 
 That's it duder - use the flickr_cli command and get moving.

@@ -53,8 +53,8 @@ module FlickrCli
             download_url  = picture.source
           end
           break if download_url
-        end
-        @cached_art["photo_#{picked_photo.id}"] = AsciiArt.new(download_url).to_ascii_art(width: 175)
+      end
+        @cached_art["photo_#{picked_photo.id}"] = AsciiArt.new(download_url).to_ascii_art(width: 150, color: true)
 
         puts @cached_art["photo_#{picked_photo.id}"]
       end

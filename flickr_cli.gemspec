@@ -14,7 +14,7 @@ $spec = Gem::Specification.new do |s|
   s.add_dependency('highline', '1.6.11')
   s.add_dependency('launchy',  '0.4.0')
   s.add_dependency('flickraw', '0.8.4')
-  s.add_dependency('asciiart', '0.0.4')
+  s.add_dependency('asciiart', '0.0.5')
 
   s.add_development_dependency('pry')
 

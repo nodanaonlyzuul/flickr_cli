@@ -13,7 +13,7 @@ $spec = Gem::Specification.new do |s|
 
   s.add_dependency 'highline',              '1.6.11'
   s.add_dependency 'asciiart',              '0.0.8'
-  s.add_dependency 'flickr_authentication', '0.0.1'
+  s.add_dependency 'flickr_authentication', '0.0.3'
 
   s.add_development_dependency('pry')
 

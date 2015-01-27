@@ -1,17 +1,17 @@
 PATH
   remote: .
   specs:
-    flickr_cli (0.2.3)
-      asciiart (= 0.0.8)
+    flickr_cli (0.2.5)
+      asciiart (= 0.0.9)
       flickr_authentication (= 0.0.3)
       highline (= 1.6.11)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    asciiart (0.0.8)
+    asciiart (0.0.9)
       rainbow (= 2.0.0)
-      rmagick
+      rmagick (= 2.13.4)
     coderay (1.0.8)
     configuration (1.3.4)
     flickr_authentication (0.0.3)
@@ -28,8 +28,8 @@ GEM
       method_source (~> 0.8)
       slop (~> 3.3.1)
     rainbow (2.0.0)
-    rake (10.3.2)
-    rmagick (2.13.2)
+    rake (10.4.2)
+    rmagick (2.13.4)
     slop (3.3.3)
 
 PLATFORMS

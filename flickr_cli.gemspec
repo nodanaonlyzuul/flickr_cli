@@ -12,7 +12,7 @@ $spec = Gem::Specification.new do |s|
   s.files         = Dir['bin/*','lib/**/*']
 
   s.add_dependency 'highline',              '1.6.11'
-  s.add_dependency 'asciiart',              '0.2.0'
+  s.add_dependency 'asciiart',              '0.3.0'
   s.add_dependency 'flickr_authentication', '0.0.4'
 
   s.add_development_dependency('pry')

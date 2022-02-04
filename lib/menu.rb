@@ -61,10 +61,13 @@ module FlickrCli
     end
 
     def self.good_by_message
-      ["Be that way",
-        "Goodbye - I'll never love again",
-        "I love my wife, is that a crime?",
-        "Goodbye - Flickr? I hardly know her"].shuffle[0]
+      ['Be that way.',
+        "Goodbye - I'll never love again.",
+        'I love my kid, is that a crime?',
+        'Smell u l8er sk8ter',
+        'How could you do this to me? Now?',
+        'Listen to Lilys, Swervedriver, and The Swirilies.',
+        'Flickr? I hardly know her'].sample
     end
 
     def self.contacts
